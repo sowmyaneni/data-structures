@@ -16,9 +16,6 @@
     var tempKey = Object.keys(storage)[0];
     var tempStorage = storage[tempKey];
     delete storage[tempKey];
-    // if (key > 0) {
-    //   key--;
-    // }
     return tempStorage;
   };
 
