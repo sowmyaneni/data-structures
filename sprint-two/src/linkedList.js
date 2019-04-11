@@ -4,12 +4,39 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+    //Create new node by calling the Node function
+    var newNode = Node(value);
+  
+    if (list.head === null) {
+       list.head = newNode;
+    } else {
+      list.tail.next = newNode;
+    }
+
+    list.tail = newNode;
+
   };
 
   list.removeHead = function() {
+    var results = list.head.value;
+    if(list.head){
+      list.head = list.head.next
+      return results
+    }
   };
 
-  list.contains = function(target) {
+  list.contains = function(target, node) {
+    
+    // var node = list.head; talk about this
+    if (node === undefined) {
+      var node = list.head
+    }
+    if(node.value === target){
+      return true
+    }
+    if(node.next){
+      return list.contains(target, node.next)
+    }
   };
 
   return list;
@@ -27,3 +54,6 @@ var Node = function(value) {
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+
+ // 
