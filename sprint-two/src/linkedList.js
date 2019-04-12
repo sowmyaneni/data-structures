@@ -20,8 +20,8 @@ var LinkedList = function() {
   list.removeHead = function() {
     var results = list.head.value;
     if(list.head){
-      list.head = list.head.next
-      return results
+      list.head = list.head.next;
+      return results;
     }
   };
 
@@ -29,14 +29,19 @@ var LinkedList = function() {
     
     // var node = list.head; talk about this
     if (node === undefined) {
-      var node = list.head
+      var node = list.head;
     }
+
     if(node.value === target){
-      return true
+      return true;
     }
-    if(node.next){
+
+    if(node.next !== null){
       return list.contains(target, node.next)
     }
+
+    return false;
+
   };
 
   return list;
