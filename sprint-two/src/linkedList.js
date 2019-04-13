@@ -28,9 +28,7 @@ var LinkedList = function() {
   list.contains = function(target, node) {
     
     // var node = list.head; talk about this
-    if (node === undefined) {
-      var node = list.head;
-    }
+    var node = (arguments[1] || list.head)
 
     if(node.value === target){
       return true;
@@ -58,6 +56,9 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ //contains: O(n);
+ //AddToTail : O(1);
+ //RemoveHead: O(1);
  */
 
 
